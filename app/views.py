@@ -25,12 +25,12 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
     
-@app.route('/filelisting',methods =['POST','GET'])
-def filelisting():
+@app.route('/uploads',methods =['POST','GET'])
+def uploads():
     if not session.get('logged_in'):
         abort(401)
     
-    return render_template('filelisting.html',uploads=get_uploads())
+    return render_template('uploads.html',uploads=get_uploads())
      
 def get_uploads():
     uploads= []
